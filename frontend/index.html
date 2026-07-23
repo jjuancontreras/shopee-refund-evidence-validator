@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refund Evidence Validation — Ops Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">Refund Evidence Validation — Ops Dashboard</span>
+      </div>
+      <div class="header-status" id="connection-status">Connecting…</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card current-card" id="current-card">
+      <h2>Currently Processing</h2>
+      <div id="current-content" class="idle">Idle — no order processing.</div>
+    </section>
+
+    <div class="two-col">
+      <section class="card">
+        <h2>Queue</h2>
+        <ol id="queue-list" class="queue-list">
+          <li class="empty">Nothing waiting.</li>
+        </ol>
+      </section>
+
+      <section class="card history-card">
+        <h2>History</h2>
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Status</th>
+              <th>Confidence</th>
+              <th>Finished</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="history-body">
+            <tr><td colspan="5" class="empty">No runs yet.</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

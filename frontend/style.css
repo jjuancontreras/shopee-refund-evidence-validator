@@ -1,0 +1,290 @@
+:root {
+  --shopee-orange: #ee4d2d;
+  --shopee-orange-dark: #d7411f;
+  --bg: #f5f5f5;
+  --card-bg: #ffffff;
+  --text: #222222;
+  --text-muted: #757575;
+  --border: #eeeeee;
+
+  --green: #2e7d32;
+  --green-bg: #e8f5e9;
+  --red: #c62828;
+  --red-bg: #fdecea;
+  --amber: #b26a00;
+  --amber-bg: #fff3e0;
+  --gray: #616161;
+  --gray-bg: #eeeeee;
+
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(180deg, var(--shopee-orange), var(--shopee-orange-dark));
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  color: var(--shopee-orange);
+  font-weight: 800;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+.header-status {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 24px 48px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(400px, 2fr);
+  gap: 16px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Currently Processing */
+
+.current-card .idle {
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.current-order {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.current-order-id {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.current-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.stage-stepper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 8px;
+}
+
+.stage-step {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--gray-bg);
+  margin: 4px 6px 4px 0;
+  white-space: nowrap;
+}
+
+.stage-step.done {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.stage-step.active {
+  background: var(--shopee-orange);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Queue */
+
+.queue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.queue-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.queue-list li:last-child {
+  border-bottom: none;
+}
+
+.queue-list .position {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--gray-bg);
+  color: var(--gray);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.queue-list .empty,
+.history-table .empty {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* History */
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.history-table th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 6px 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.history-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.history-table tr:last-child td {
+  border-bottom: none;
+}
+
+.error-message {
+  display: block;
+  color: var(--red);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.report-link {
+  color: var(--shopee-orange);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.report-link:hover {
+  text-decoration: underline;
+}
+
+/* Status badges */
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge-valid,
+.badge-completed {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.badge-invalid,
+.badge-failed {
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+.badge-review {
+  background: var(--amber-bg);
+  color: var(--amber);
+}
+
+.badge-pending,
+.badge-inconclusive,
+.badge-unknown {
+  background: var(--gray-bg);
+  color: var(--gray);
+}

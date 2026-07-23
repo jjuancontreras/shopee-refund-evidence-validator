@@ -1,0 +1,29 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+sqlalchemy
+httpx
+python-multipart
+python-dotenv
+
+# Stage 1 - preprocessing
+opencv-python
+Pillow
+exifread
+ffmpeg-python
+scenedetect[opencv]
+
+# Stage 3 - inspectors
+open_clip_torch
+torch
+transformers
+pillow-avif-plugin ; python_version >= "3.9"
+
+# Stage 0 - intake / scraping
+playwright
+gdown
+
+# Stage 6 - review UI
+streamlit
+pandas

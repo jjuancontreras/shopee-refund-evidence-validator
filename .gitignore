@@ -1,0 +1,20 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/
+*.db
+scrape_cache/
+.streamlit/
+
+# Runtime logs/pids from locally-run dev servers (uvicorn, streamlit,
+# cloudflared) -- not source, and actively written to while those
+# processes run.
+*_out.log
+*_err.log
+*_pid.txt
+dashboard_*.png
+
+# local run logs
+*_log.txt
